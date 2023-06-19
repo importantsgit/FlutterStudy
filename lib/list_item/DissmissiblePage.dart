@@ -19,8 +19,29 @@ class _DissmissiblePageState extends State<DissmissiblePage> {
       body: ListView.builder(
           itemCount: items.length,
           itemBuilder: (context, index) {
-            return ListTile(
-              title: Text(items[index]),
+            final item = items[index];
+            return Dismissible(
+              background: Container(
+                padding: const EdgeInsets.only(left: 16.0),
+                alignment: Alignment.centerLeft,
+                color: Colors.red,
+                child: const Text(
+                  '삭제',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              direction: DismissDirection.startToEnd,
+              onDismissed: (direction) {
+                if (direction == DismissDirection.startToEnd) {
+                  setState(() {
+                    items.removeAt(index);
+                  });
+                }
+              },
+              key: Key(item),
+              child: ListTile(
+                title: Text(items[index]),
+              ),
             );
           }),
     );

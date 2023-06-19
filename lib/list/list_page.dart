@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_practice/Extension.dart';
 import 'package:flutter_practice/list_item/DissmissiblePage.dart';
 import 'package:flutter_practice/list_item/FormValidationPage.dart';
+import 'package:flutter_practice/list_item/SwipePage.dart';
 import 'package:flutter_practice/list_item/drawer_page.dart';
 import 'package:flutter_practice/list_item/orientation_builder_page.dart';
 import 'package:flutter_practice/list_item/snackbar_page.dart';
@@ -26,7 +27,8 @@ class _ListPageState extends State<ListPage> {
     OrientationBuilderPage(),
     TabControllerPage(),
     FormValidationPage(),
-    DissmissiblePage()
+    DissmissiblePage(),
+    SwipePage()
   ];
   final _names = const [
     'AnimatedContainerPage',
@@ -36,7 +38,8 @@ class _ListPageState extends State<ListPage> {
     'OrientationBuilderPage',
     'TabControllerPage',
     'FormValidationPage',
-    'DissmissiblePage'
+    'DissmissiblePage',
+    'SwipePage'
   ];
   late List<ListModel> listData = List.generate(
       _pages.length, (index) => ListModel(_names[index], _pages[index]));
