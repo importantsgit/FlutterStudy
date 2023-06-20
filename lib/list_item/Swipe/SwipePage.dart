@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_practice/list_item/Swipe/FirstViewPage.dart';
+import 'package:flutter_practice/list_item/Swipe/SecondViwPage.dart';
+import 'package:flutter_practice/list_item/Swipe/ThirdViewPage.dart';
 
 class SwipePage extends StatefulWidget {
   const SwipePage({super.key});
@@ -13,16 +16,10 @@ class _SwipePageState extends State<SwipePage> {
     return Scaffold(
       appBar: AppBar(title: const Text('SwipePage')),
       body: PageView(
-        children: <Widget>[
-          Container(
-            color: Colors.red,
-          ),
-          Container(
-            color: Colors.blue,
-          ),
-          Container(
-            color: Colors.yellowAccent,
-          ),
+        children: const <Widget>[
+          FirstViewPage(),
+          SecondViewPage(),
+          ThirdViewPage(),
         ],
       ),
     );
